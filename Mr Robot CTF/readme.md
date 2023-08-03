@@ -1,5 +1,8 @@
 ## Mr Robot CTF [THM]
 
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/57cfddb9-c046-4f14-90f1-e4225d1fe13f)
+
+
 Link: https://tryhackme.com/room/mrrobot
 
 Goal: 3 keys
