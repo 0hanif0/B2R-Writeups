@@ -1,6 +1,6 @@
 ## Pickle Rick [THM]
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/a9c5d8b0-0453-4dc7-ac9a-64aef9b0f5b6)
+![image](images/258005917-a9c5d8b0-0453-4dc7-ac9a-64aef9b0f5b6.png)
 
 Link: https://tryhackme.com/room/picklerick
 
@@ -32,11 +32,11 @@ Nmap done: 1 IP address (1 host up) scanned in 41.96 seconds
 
 ## view web [port 80]
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/ddeb74a7-42d3-44bd-88df-cde032d9d2a1)
+![image](images/258007474-ddeb74a7-42d3-44bd-88df-cde032d9d2a1.png)
 
 - view source code
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/188c694d-3cc6-4271-9114-bc653852637e)
+![image](images/258007630-188c694d-3cc6-4271-9114-bc653852637e.png)
 
 - found username: R1ckRul3s, maybe for web login
 
@@ -60,59 +60,59 @@ Task Completed
 
 ## robots.txt
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/c92423f8-79e6-4813-ba8d-9f2849cd85bb)
+![image](images/258008516-c92423f8-79e6-4813-ba8d-9f2849cd85bb.png)
 
 - found maybe password: Wubbalubbadubdub
 
 ## login.php
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/c4f28b97-fe5a-4bf5-b941-8c18f4917337)
+![image](images/258008958-c4f28b97-fe5a-4bf5-b941-8c18f4917337.png)
 
 - login page
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/5da7e2c0-2891-4e73-bd89-1ab3f77550a8)
+![image](images/258009236-5da7e2c0-2891-4e73-bd89-1ab3f77550a8.png)
 
 - successfully login using Username: R1ckRul3s, Password: Wubbalubbadubdub
 
 ## ls
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/fc3b3139-6563-4206-b231-daa8f691f5a5)
+![image](images/258014202-fc3b3139-6563-4206-b231-daa8f691f5a5.png)
 
 ## first ingredient
 
 - goto /Sup3rS3cretPickl3Ingred.txt, found ingredient 1: mr. meeseek hair
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/611ee2b2-525a-4828-9cb4-7db285ce6976)
+![image](images/258010254-611ee2b2-525a-4828-9cb4-7db285ce6976.png)
 
 - goto /clue.txt
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/b0d2ce32-7591-4daa-8e31-a9c354740870)
+![image](images/258010866-b0d2ce32-7591-4daa-8e31-a9c354740870.png)
 
 ## pwd
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/451b3916-a796-4e67-9f22-9de3982091e6)
+![image](images/258014551-451b3916-a796-4e67-9f22-9de3982091e6.png)
 
 - based on clue maybe we can change directory
 
 ## ls /home/rick
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/54a7072d-616c-424f-984a-e1b2f59d94a7)
+![image](images/258015655-54a7072d-616c-424f-984a-e1b2f59d94a7.png)
 
 ## second ingredient
 
 - since cmd `cat` is disable, im using `less '/home/rick/second ingredients'`
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/f8460dcb-4623-418f-9a74-f91336951f30)
+![image](images/258016136-f8460dcb-4623-418f-9a74-f91336951f30.png)
 
 ## privilege escalation
 
 - using `sudo -l`
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/5824db2b-a9f5-4131-80a3-e2360bba137a)
+![image](images/258016604-5824db2b-a9f5-4131-80a3-e2360bba137a.png)
 
 - nice, sudo can be access without a password, we can change directory to /root easily.
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/0d06abc7-8b53-407b-bf98-754933cdac68)
+![image](images/258018241-0d06abc7-8b53-407b-bf98-754933cdac68.png)
 
 - see, we got root!, im using `sudo ls -lah /root`
 
@@ -120,6 +120,6 @@ Task Completed
 
 - im using `sudo less /root/3rd.txt`
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/ebe1d7fd-4932-4d9a-a122-56ef5b080776)
+![image](images/258018671-ebe1d7fd-4932-4d9a-a122-56ef5b080776.png)
 
 - PWNED! :star:
