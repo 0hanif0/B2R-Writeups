@@ -1,6 +1,6 @@
 ## Mr Robot CTF [THM]
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/57cfddb9-c046-4f14-90f1-e4225d1fe13f)
+![image](images/258005482-57cfddb9-c046-4f14-90f1-e4225d1fe13f.png)
 
 
 Link: https://tryhackme.com/room/mrrobot
@@ -35,7 +35,7 @@ Nmap done: 1 IP address (1 host up) scanned in 37.46 seconds
 
 ## view web [port 80]
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/cf42b083-2891-4517-88cb-18ac79e35e23)
+![image](images/257760405-cf42b083-2891-4517-88cb-18ac79e35e23.png)
 
 ## dirsearch
 ```
@@ -77,18 +77,18 @@ Task Completed
 
 ## robots.txt
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/c2a5b7b6-fc4c-4c46-b7d9-55dc34cc3ab4)
+![image](images/257761197-c2a5b7b6-fc4c-4c46-b7d9-55dc34cc3ab4.png)
 
 - fsocity.dic
 - key-1-of-3.txt
 
 ## key 1
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/ebc8f0cc-d162-4bfc-b0bb-2f3353c27aec)
+![image](images/257761795-ebc8f0cc-d162-4bfc-b0bb-2f3353c27aec.png)
 
 ## download fsociety.dic
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/d40f3f58-7dc7-4171-bd82-db75b4ca66f4)
+![image](images/257763233-d40f3f58-7dc7-4171-bd82-db75b4ca66f4.png)
 
 - to sort and filter duplicate
 ```
@@ -97,7 +97,7 @@ sort fsocity.dic | uniq > filter.txt
 
 ## wp-login
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/f7433ee8-b9d5-452c-a2f6-4b039608c1c1)
+![image](images/257769941-f7433ee8-b9d5-452c-a2f6-4b039608c1c1.png)
 
 ## hydra [bruteforce username]
 ```
@@ -132,17 +132,17 @@ Trying Elliot / erased Time: 00:08:34 <==============                           
 
 ## successfully login
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/57d938ad-5b04-4a35-926e-5075a7da1656)
+![image](images/257867577-57d938ad-5b04-4a35-926e-5075a7da1656.png)
 
 ## setup php reverse shell
 - goto editor => edit 404 template => replace with php reverse shell => update file
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/cc9fb496-64c0-4fc0-bf64-335f3d1182e9)
+![image](images/257870081-cc9fb496-64c0-4fc0-bf64-335f3d1182e9.png)
 
 ## setup netcat listener
 - goto `http://10.10.191.118/wordpress/wp-content/themes/twentyfifteen/404.php` dont forget to open listener `nc -lnvp 1337` on terminal
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/b6020c84-067a-4f2b-8734-9bb82d14b0bf)
+![image](images/257871519-b6020c84-067a-4f2b-8734-9bb82d14b0bf.png)
 
 - `python3 -c 'import pty;pty.spawn("/bin/bash")'` upgrade shell
 - `export TERM=xterm` enable clear
@@ -151,7 +151,7 @@ Trying Elliot / erased Time: 00:08:34 <==============                           
 - `cat password.raw-md5` `robot:c3fcd3d76192e4007dfb496cca67e13b`
 - `cat key-2-of-3.txt` `Permission denied`
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/bb3fb870-6da9-4d78-b614-31155ac89681)
+![image](images/257877739-bb3fb870-6da9-4d78-b614-31155ac89681.png)
 
 
 ## crack md5 hash
@@ -171,25 +171,25 @@ Session completed.
 
 ## switch user to robot
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/ce39eb3b-2a3d-4efa-b7b3-9ec1ec630974)
+![image](images/257878256-ce39eb3b-2a3d-4efa-b7b3-9ec1ec630974.png)
 
 ## key 2
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/8ded0f0d-6d7d-46dc-ade5-c1fe5d1a92fc)
+![image](images/257878716-8ded0f0d-6d7d-46dc-ade5-c1fe5d1a92fc.png)
 
 ## privilege escalation
 - using SUID Commands `find / -user root -perm /4000 2>/dev/null`
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/74d1126b-baf4-4607-86d9-d01986e855c3)
+![image](images/257879984-74d1126b-baf4-4607-86d9-d01986e855c3.png)
 
 - Search GTFObins for [nmap](https://gtfobins.github.io/gtfobins/nmap/) because it looks sus here.
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/45e99a78-295b-4192-9b94-9c33460b5800)
+![image](images/257884196-45e99a78-295b-4192-9b94-9c33460b5800.png)
 
 - root!
 
 ## key 3
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/b26a09eb-3d7f-4402-a63f-1bf3bf9b0089)
+![image](images/257884617-b26a09eb-3d7f-4402-a63f-1bf3bf9b0089.png)
 
 - PWNED! :star:
