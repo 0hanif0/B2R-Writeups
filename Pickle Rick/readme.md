@@ -68,13 +68,17 @@ Task Completed
 
 ![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/c4f28b97-fe5a-4bf5-b941-8c18f4917337)
 
-- successfully login using Username: R1ckRul3s, Password: Wubbalubbadubdub
+- login page
 
 ![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/5da7e2c0-2891-4e73-bd89-1ab3f77550a8)
 
-- execute cmd `ls -lah`
+- successfully login using Username: R1ckRul3s, Password: Wubbalubbadubdub
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/84c460e1-8da8-424a-8bd9-41de1dcb1ffb)
+## ls
+
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/fc3b3139-6563-4206-b231-daa8f691f5a5)
+
+## first ingredient
 
 - goto /Sup3rS3cretPickl3Ingred.txt, found ingredient 1: mr. meeseek hair
 
@@ -83,3 +87,39 @@ Task Completed
 - goto /clue.txt
 
 ![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/b0d2ce32-7591-4daa-8e31-a9c354740870)
+
+## pwd
+
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/451b3916-a796-4e67-9f22-9de3982091e6)
+
+- based on clue maybe we can change directory
+
+## ls /home/rick
+
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/54a7072d-616c-424f-984a-e1b2f59d94a7)
+
+## second ingredient
+
+- since cmd `cat` is disable, im using `less '/home/rick/second ingredients'`
+
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/f8460dcb-4623-418f-9a74-f91336951f30)
+
+## privilege escalation
+
+- using `sudo -l`
+
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/5824db2b-a9f5-4131-80a3-e2360bba137a)
+
+- nice, sudo can be access without a password, we can change directory to /root easily.
+
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/0d06abc7-8b53-407b-bf98-754933cdac68)
+
+- see, we got root!, im using `sudo ls -lah /root`
+
+## third ingredient
+
+- im using `sudo less /root/3rd.txt`
+
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/ebe1d7fd-4932-4d9a-a122-56ef5b080776)
+
+- PWNED! :star:
