@@ -142,3 +142,29 @@ Hydra v9.4 (c) 2022 by van Hauser/THC & David Maciejak - Please do not use in mi
 ```
 
 - found Username: human, Password: cuteyadmin
+
+## connect ssh [port 22]
+
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/b8a0decb-0bce-44dd-bdb4-037f35a8eccc)
+
+- using credentials found from hydra
+
+## privilege escalation
+
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/59816c82-2995-42dc-b98c-b167107c4d41)
+
+- using `sudo -l`
+
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/aa909129-ee16-46b3-8671-329476d6bd24)
+
+- Search GTFObins for [nano](https://gtfobins.github.io/gtfobins/nano/)
+
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/b55b6c18-f050-4a7d-afc8-fe84e7c44296)
+
+- root!
+
+## root.txt
+
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/45361027-e1fa-4e3e-8cc2-c946f667555f)
+
+- PWNED! ⭐
