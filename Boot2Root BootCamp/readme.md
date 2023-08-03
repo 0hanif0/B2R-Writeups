@@ -167,4 +167,4 @@ Hydra v9.4 (c) 2022 by van Hauser/THC & David Maciejak - Please do not use in mi
 
 ![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/45361027-e1fa-4e3e-8cc2-c946f667555f)
 
-- PWNED! ⭐
+- PWNED! :star:
