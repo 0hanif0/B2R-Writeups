@@ -81,8 +81,27 @@ Nmap done: 1 IP address (1 host up) scanned in 33.65 seconds
 
 ## switch user to jack
 
-![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/8175509c-31bb-43da-9a47-fdae366fb0fb)
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/8a649cb8-ed32-45c3-a78f-bc334321e996)
 
 ## user.txt
+
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/58b0c281-4526-460f-acaf-264e5f1d8b9d)
+
+## privilege escalation
+
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/c3ac22a8-8478-437a-b7fd-3448e16332ab)
+
+- using `sudo -l`
+
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/805df3c3-a087-4146-8805-3b4dc5394de9)
+
+- nice, sudo can be access without a password, we can change user to root easily. using `sudo su`
+- root!
+
+## root.txt
+
+![image](https://github.com/0hanif0/B2R-Writeups/assets/23289982/a5573d39-b208-45bf-8b0e-ed622a74b024)
+
+- PWNED! ⭐
 
 
